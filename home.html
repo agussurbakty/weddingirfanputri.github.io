@@ -46,6 +46,7 @@
           <li><a data-scroll-nav="3" href="#">Events</a></li>
           <li><a data-scroll-nav="4" href="#">Gallery</a></li>
           <li><a data-scroll-nav="5" href="#">Gift</a></li>
+          <li><a data-scroll-nav="6" href="#">Message</a></li>
         </ul>
       </div>
     </div>
@@ -393,12 +394,12 @@
 <!-- prokes section start -->
 
 <!-- rsvp section start -->
-<section class="rsvp-section" data-scroll-index="7">
+<section class="rsvp-section" data-scroll-index="6">
   <div class="container">
     <div class="row">
       <div class="section-tittle">
-        <h2>You Are Invited</h2>
-        <p>Please kindly response before 20 - 21 May 2022</p>
+        <h2>Send prayers and Greetings</h2>
+        <p>Write a wish or a prayer for the bride and groom</p>
       </div>
     </div>
     <div class="row">
@@ -406,22 +407,28 @@
         <form class="form">
           <div class="row">
             <div class="input-group w50">
-              <input type="text" placeholder="Name" id="name" class="input-control" autocomplete="off">
+              <input type="text" placeholder="Full name" id="name" class="input-control" autocomplete="off">
+            </div>
+            <div class="input-group w50">
+              <input type="email" placeholder="Email address" id="email" class="input-control" autocomplete="off">
             </div>
           </div>
           <div class="row">
             <div class="input-group w50">
-              <input type="email" placeholder="Email" id="email" class="input-control" autocomplete="off">
+              <input type="text" placeholder="Mobile number" id="phone" class="input-control" autocomplete="off">
+            </div>
+            <div class="input-group w50">
+              <input type="text" placeholder="Will you attend my invitation?" id="subject" class="input-control" autocomplete="off">
             </div>
           </div>
           <div class="row">
-            <div class="input-group w50">
-              <input type="text" placeholder="I'm attending or I'm not attending" id="subject" class="input-control" autocomplete="off">
+            <div class="domicile">
+              <input type="text" placeholder="Domicile address" id="domicile" class="input-control" autocomplete="off">
             </div>
           </div>
           <div class="row">
             <div class="input-group">
-              <textarea id="message" placeholder="Message" cols="30" rows="10" class="input-controll"></textarea>
+              <textarea id="message" placeholder="Write a greeting or prayer for the bride and groom" cols="30" rows="10" class="message"></textarea>
             </div>
           </div>
           <div class="row">
@@ -546,15 +553,17 @@
         e.preventDefault()
         var name = document.getElementById('name').value;
         var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
         var subject = document.getElementById('subject').value;
+        var domicile = document.getElementById('domicile').value;
         var message = document.getElementById('message').value;
-        var body = 'Name : ' + name + '<br/> Email : ' + email + '<br/> Subject : ' + subject + '<br/> Message : ' + message;
+        var body = 'Name : ' + name + '<br/> Email : ' + email + '<br/> Subject : ' + subject + '<br/> Phone Number : ' + phone + '<br/> Domicile Address : ' + domicile + '<br/> Message : ' + message;
 
         Email.send({
             Host : "smtp.gmail.com",
-            Username : "musicgallery48@gmail.com",
-            Password : "lfuaaanitdcfpxrk",
-            To : 'musicgallery48@gmail.com',
+            Username : "phardiyanti314@gmail.com",
+            Password : "lwweaeffmkrejmtj",
+            To : 'phardiyanti314@gmail.com',
             From : email,
             Subject : subject,
             Body : body
