@@ -465,9 +465,9 @@ footer{
 }
 
 /* story section */
-.story-section{
-    padding: 80px 0 80px;
-}
+/*.story-section{
+    padding: 50px 0 50px;
+}*/
 
 .story-section .story-content{
     flex: 0 0 100%;
@@ -934,6 +934,17 @@ video{
     display: block;
     width: 100%;
     height: 45px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: #000000;
+    padding: 6px 12px;
+    border: 1px solid #cccccc;
+}
+
+.rsvp-section .form .input-controll{
+    display: block;
+    width: 100%;
+    height: 100px;
     margin-bottom: 30px;
     font-size: 16px;
     color: #000000;

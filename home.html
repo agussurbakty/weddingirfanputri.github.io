@@ -136,26 +136,9 @@
   <div class="container">
     <div class="row">
       <div class="section-tittle">
-        <h2>Our Love Story</h2>
+        <h2></h2>
       </div>
     </div>
-    <div class="row">
-      <div class="story-content">
-        <!-- story item start -->
-        <div class="story-item">
-          <i class="fas fa-heart"></i>
-          <div class="story-text">
-            <h3>Engagement</h3>
-            <span class="date">25 Feb 2020</span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div class="story-img">
-            <img src="img/story/story-1.jpg" alt="couple lover story">
-          </div>
-        </div>
-        <!-- story item end -->
-      </div>
-    </div> 
   </div>
 </section>
 <!-- story section end -->
@@ -423,28 +406,27 @@
         <form class="form">
           <div class="row">
             <div class="input-group w50">
-              <input type="text" placeholder="Name" class="input-control">
+              <input type="text" placeholder="Name" id="name" class="input-control" autocomplete="off">
             </div>
+          </div>
+          <div class="row">
             <div class="input-group w50">
-              <input type="text" placeholder="Email" class="input-control">
+              <input type="email" placeholder="Email" id="email" class="input-control" autocomplete="off">
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-group w50">
+              <input type="text" placeholder="I'm attending or I'm not attending" id="subject" class="input-control" autocomplete="off">
             </div>
           </div>
           <div class="row">
             <div class="input-group">
-              <select class="input-control">
-                <option value="I am attending">I'm attending</option>
-                <option value="I am not attending">I'm not attending</option>
-              </select>
+              <textarea id="message" placeholder="Message" cols="30" rows="10" class="input-controll"></textarea>
             </div>
           </div>
           <div class="row">
             <div class="input-group">
-              <textarea placeholder="Message" class="input-control"></textarea>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-group">
-              <button type="submit" class="button-1">Send</button>
+              <button id="btn" class="button-1">Send</button>
             </div>
           </div>
         </form>
@@ -530,6 +512,9 @@
 <!-- // time wedding -->
 <script src="js/simplyCountdown.js"></script>
 
+<!-- // send mail -->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
 	<script>
     var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
 
@@ -555,7 +540,30 @@
 			window.getSelection().selectAllChildren(str);
 			document.execCommand("Copy")
 		}
+
+  var btn = document.getElementById('btn');
+    btn.addEventListener('click', function(e){
+        e.preventDefault()
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var subject = document.getElementById('subject').value;
+        var message = document.getElementById('message').value;
+        var body = 'Name : ' + name + '<br/> Email : ' + email + '<br/> Subject : ' + subject + '<br/> Message : ' + message;
+
+        Email.send({
+            Host : "smtp.gmail.com",
+            Username : "musicgallery48@gmail.com",
+            Password : "lfuaaanitdcfpxrk",
+            To : 'musicgallery48@gmail.com',
+            From : email,
+            Subject : subject,
+            Body : body
+        }).then(
+            message => alert(message)
+        );
+    })  
 </script>
+
 </body>
 </html>
 
