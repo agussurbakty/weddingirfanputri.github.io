@@ -1,5 +1,6 @@
 /*  light-yellow color style    */
 
+dropbtn,
 .fa-music,
 .preloader .loader i,
 .simply-countdown > .simply-section,
@@ -35,6 +36,7 @@ body.dark .header .nav ul li a:hover,
     border-right-color: #ff9801; 
 }
 
+.dropbtn,
 .fa-music.pause:after,
 .simply-countdown > .simply-section,
 .setting .s-toggle-btn,

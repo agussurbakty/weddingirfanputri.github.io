@@ -136,6 +136,42 @@ $(document).ready(function(){
     }
 
     
+    $(function() {
+        $("ul > a").click(function() {
+          var lang = $(this).data("lang");
+          if (lang == "en")
+            $('input[type="text1"]').attr('placeholder', 'Full name');
+          else
+            $('input[type="text1"]').attr('placeholder', 'Nama Lengkap');
+
+            if (lang == "en")
+            $('input[type="email"]').attr('placeholder', 'Email address');
+          else
+            $('input[type="email"]').attr('placeholder', 'Alamat email');
+            
+            if (lang == "en")
+            $('input[type="text2"]').attr('placeholder', 'Mobile number');
+          else
+            $('input[type="text2"]').attr('placeholder', 'Nomor Handphone');
+            
+            if (lang == "en")
+            $('input[type="text3"]').attr('placeholder', 'Will you attend my invitation?');
+          else
+            $('input[type="text3"]').attr('placeholder', 'Apakah anda akan hadir ?');
+
+            if (lang == "en")
+            $('input[type="text4"]').attr('placeholder', 'Domicile address');
+          else
+            $('input[type="text4"]').attr('placeholder', 'Alamat domisili');
+
+            if (lang == "en")
+            $('textarea[type="text5"]').attr('placeholder', 'Write a greeting or prayer for the bride and groom');
+          else
+            $('textarea[type="text5"]').attr('placeholder', 'Tulis salam atau doa untuk pengantin');
+  
+        })
+      });
+
 })
 
 

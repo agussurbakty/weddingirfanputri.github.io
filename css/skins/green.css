@@ -1,5 +1,6 @@
 /*  green color style    */
 
+dropbtn,
 .fa-music,
 .preloader .loader i,
 .simply-countdown > .simply-section,
@@ -33,6 +34,7 @@ body.dark .header .nav ul li a:hover,
     border-right-color: #2ea44f; 
 }
 
+.dropbtn,
 .fa-music.pause:after,
 .simply-countdown > .simply-section,
 .setting .s-toggle-btn,
